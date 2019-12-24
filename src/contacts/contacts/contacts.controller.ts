@@ -6,4 +6,7 @@ export class ContactsController {
     index(): string {
         return 'esta rota retorna os contatos'
     }
+
+    // Adding the CRUD Endpoints
+    // https://www.techiediaries.com/nestjs-tutorial-rest-api-crud/
 }
