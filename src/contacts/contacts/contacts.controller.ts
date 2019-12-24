@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller('contacts')
-export class ContactsController {}
+export class ContactsController {
+    @Get()
+    index(): string {
+        return 'esta rota retorna os contatos'
+    }
+}
