@@ -23,5 +23,10 @@ export class ContactsController {
         console.log(`Update #${contactData.id}`);
         return this.contactService.update(contactData);
     }
+
+    @Delete(':id/delete')
+    async delete(@Param('id') id): Promise<any> {
+        return this.contactService.delete(id);
+    }
    
 }
