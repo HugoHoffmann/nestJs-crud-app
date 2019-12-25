@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Contact } from '../contact.entity';
+import { ContactsService } from '../contacts/contacts.service';
 
 @Controller('contacts')
 export class ContactsController {
-    @Get()
-    index(): string {
-        return 'esta rota retorna os contatos'
-    }
+    constructor(private contactService: ContactsService){}
 
-    // Adding the CRUD Endpoints
-    // https://www.techiediaries.com/nestjs-tutorial-rest-api-crud/
+    @Get()
+    index(): Promise<Contact[]> {
+        return this.contactService.findAll();
+    }
+   
 }
